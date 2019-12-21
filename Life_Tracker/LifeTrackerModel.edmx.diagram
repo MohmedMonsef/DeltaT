@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="23e427d135c0489aa8684b8953f6bc88" Name="Diagram1">
+        <EntityTypeShape EntityType="Life_TrackerModel.Disease" Width="1.5" PointX="0.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Habit" Width="1.5" PointX="6" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Info" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.MedicineDose" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Person" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.PersonHabit" Width="1.5" PointX="8.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.PersonRest" Width="1.5" PointX="8.25" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Proj_Msg_Videos" Width="1.5" PointX="7.5" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Project" Width="1.5" PointX="5.25" PointY="21.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Rest" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Schedule" Width="1.5" PointX="5.25" PointY="25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.SuffersFrom" Width="1.5" PointX="10.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.Task" Width="1.5" PointX="7.5" PointY="28" IsExpanded="true" />
+        <EntityTypeShape EntityType="Life_TrackerModel.TaskList" Width="1.5" PointX="5.25" PointY="28.125" IsExpanded="true" />
+        <AssociationConnector Association="Life_TrackerModel.FK__MedicineD__Disea__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__SuffersFr__Disea__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK_PersonHabit_Habit" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__Info__PersonID__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__MedicineD__Docto__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__MedicineD__Perso__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__PersonRes__Perso__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__Project__adminID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__Schedule__Person__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__SuffersFr__Docto__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__SuffersFr__Perso__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__TaskList__AdminI__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__TaskList__OwnerI__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK_PersonHabit_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__PersonRes__RestI__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__Proj_Msg___Proje__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.FK__Task__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.ContributesTo" ManuallyRouted="false" />
+        <AssociationConnector Association="Life_TrackerModel.PersonAllergies" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
