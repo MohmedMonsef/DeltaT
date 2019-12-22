@@ -7,15 +7,31 @@ using System.Web.Http;
 
 namespace Life_Tracker.Controllers
 {
-    [RoutePrefix("api/UserSchedule")]
+    //[RoutePrefix("api/UserSchedule")]
     public class UserScheduleController : ApiController
     {
         
         //Get Verb:
-        //how to get both variable from the bath?
-        [Route("User/{id:int}/Schedule/{date:alpha}")]
-        public IEnumerable<GetUserDaySchedule_Result> Get(int id,string date)
+        [Route("api/UserSchedule/User/{id}/Schedule/{date}")]
+        public IEnumerable<GetUserDaySchedule_Result> Get(int id,string date)//TimeSpan Format(hh:mm)
         {
+
+           
+            int thedate = int.Parse(date);
+            int month = thedate / 1000000;
+
+            thedate = (thedate - month * 1000000);
+            int day = thedate /10000;
+
+            thedate = thedate - day * 10000;
+            int year = thedate;
+
+            date = month.ToString();
+            date += "/";
+            date += day.ToString();
+            date += "/";
+            date += year.ToString();
+           
             using (Life_TrackerEntities person = new Life_TrackerEntities())
             {
                 return person.GetUserDaySchedule(id, date).ToList();
@@ -23,24 +39,89 @@ namespace Life_Tracker.Controllers
         }
 
         //Put Verb:
-        [Route("User/{id:int}/Schedule/{day:alpha}/Slots/{start:alpha}"),HttpPut]//if you put "/" before the User it will cause an error
-        public void Put(int id,string day,string start,[FromBody]string todo)
+        [Route("api/UserSchedule/User/{id}/Schedule/{date}/Slots/{start}"),HttpPut]//if you put "/" before the User it will cause an error
+        public void Put(int id,string date,string start,[FromBody]string todo)
         {
             using (Life_TrackerEntities person = new Life_TrackerEntities())
             {
+                //date
+                int thedate = int.Parse(date);
+                int month = thedate / 1000000;
 
-                person.EditUserDayTS(id,day,TimeSpan.Parse(start),null,todo);
+                thedate = (thedate - month * 1000000);
+                int day = thedate / 10000;
+
+                thedate = thedate - day * 10000;
+                int year = thedate;
+
+                date = month.ToString();
+                date += "/";
+                date += day.ToString();
+                date += "/";
+                date += year.ToString();
+
+                //start
+                int thedate2 = int.Parse(start);
+                int hours = thedate2 / 10000;
+
+                thedate2 = (thedate2 - hours * 10000);
+                int mins = thedate2 / 100;
+
+                thedate2 = thedate2 - mins * 100;
+                int sec = thedate2;
+
+                start = hours.ToString();
+                start += ":";
+                start += mins.ToString();
+                start += ":";
+                start += sec.ToString();
+
+                person.EditUserDayTS(id, date, TimeSpan.Parse(start), null, todo);
+
             }
         }
 
         //Delete Verb:
         [HttpDelete]
-        [Route("User/{id:int}/Schedule/{day:alpha}/Slots/{start:alpha}")]
-        public void Delete(int id, string day, string start)
+        [Route("api/UserSchedule/User/{id}/Schedule/{date}/Slots/{start}")]
+        public void Delete(int id, string date, string start)
         {
             using (Life_TrackerEntities person = new Life_TrackerEntities())
             {
-                person.DeleteUserDayTS(id, day, TimeSpan.Parse(start));
+                //date
+                int thedate = int.Parse(date);
+                int month = thedate / 1000000;
+
+                thedate = (thedate - month * 1000000);
+                int day = thedate / 10000;
+
+                thedate = thedate - day * 10000;
+                int year = thedate;
+
+                date = month.ToString();
+                date += "/";
+                date += day.ToString();
+                date += "/";
+                date += year.ToString();
+
+                //start
+                int thedate2 = int.Parse(start);
+                int hours = thedate2 / 10000;
+
+                thedate2 = (thedate2 - hours * 10000);
+                int mins = thedate2 / 100;
+
+                thedate2 = thedate2 - mins * 100;
+                int sec = thedate2;
+
+                start = hours.ToString();
+                start += ":";
+                start += mins.ToString();
+                start += ":";
+                start += sec.ToString();
+
+
+                person.DeleteUserDayTS(id, date, TimeSpan.Parse(start));
 
             }
 
